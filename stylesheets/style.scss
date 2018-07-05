@@ -3,7 +3,8 @@
 'resources/header',
 'resources/input_style',
 'resources/helpers',
-'atoms/base';
+'atoms/base',
+'atoms/margins';
 
 
 body {
@@ -137,4 +138,39 @@ nav {
   grid-area: prizes;
   @include center();
   @include vertical();
+}
+
+.description_section {
+  @include description();
+  h2 {
+    @include font($main, $weighth2, $sizeh2);
+    margin-bottom: 2vh;
+  }
+
+  p {
+    @include font($main, $weighttext, $sizep);
+  }
+
+  h3 {
+    @include font($main, $weighth3, $sizeh3);
+    line-height: 1.9;
+  }
+}
+
+.square {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  grid-auto-rows: max-content;
+  grid-template-areas: "desc director";
+
+  div:nth-child(1) {
+    grid-area: desc;
+    margin-right: 6vw;
+  }
+
+  div:nth-child(2) {
+    grid-area: director;
+    color: $text_alpha;
+    @include center(column, space-between);
+  }
 }
