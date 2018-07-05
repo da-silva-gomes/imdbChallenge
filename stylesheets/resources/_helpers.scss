@@ -37,5 +37,8 @@ HELPERS
   display: flex;
   flex-direction: $direction;
   justify-content: $type;
+}
+
+@mixin vertical() {
   align-items: center;
 }
