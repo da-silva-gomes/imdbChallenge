@@ -1,0 +1,61 @@
+@import 'resources/palette',
+'resources/fonts',
+'resources/header',
+'resources/input_style';
+
+*, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $primary;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: $h_margin;
+
+  img {
+    margin-right: 1vw;
+  }
+
+  input {
+    width: 90%;
+    @include search_bar();
+    letter-spacing: $spacingsearch;
+
+    &::placeholder {
+      color: $notBlack;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: start;
+    width: 60%;
+  }
+
+  h1 {
+    font-family: $main;
+    font-weight: $weighth1;
+    font-size: $sizeh1;
+    letter-spacing: -1px;
+    color: $secondary;
+  }
+}
+
+.profile-shape {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    height: 150%;
+  }
+}
