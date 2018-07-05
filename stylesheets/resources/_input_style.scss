@@ -10,3 +10,8 @@ INPUT STYLING
   font-size: $sizesearch;
   font-weight: $weightsearch;
 }
+
+@mixin focus() {
+  outline: none;
+  color: $notBlack;
+}

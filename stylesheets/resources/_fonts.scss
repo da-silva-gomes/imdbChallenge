@@ -24,5 +24,36 @@ SEARCH STYLING
 */
 
 $weightsearch: 300;
-$sizesearch: 28px;
+$sizesearch: 24px;
 $spacingsearch: 1px;
+
+/*
+---------------------------------------------------------------
+P STYLING
+---------------------------------------------------------------
+*/
+
+$weightp: 400;
+$sizep: 18px;
+
+/*
+---------------------------------------------------------------
+SPAN STYLING
+---------------------------------------------------------------
+*/
+
+$weightspan: 800;
+$sizespan: 18px;
+
+/*
+---------------------------------------------------------------
+MIXIN FOR TEXT STYLE
+---------------------------------------------------------------
+*/
+
+@mixin font($family, $weight, $size, $spacing:normal) {
+  font-family: $family,;
+  font-weight: $weight;
+  font-size: $size;
+  letter-spacing: $spacing;
+}
