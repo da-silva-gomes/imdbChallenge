@@ -32,3 +32,10 @@ HELPERS
 @mixin translate($x, $y) {
   transform: translate($x, $y);
 }
+
+@mixin center($direction:column, $type:center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $type;
+  align-items: center;
+}

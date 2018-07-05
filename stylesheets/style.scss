@@ -87,18 +87,18 @@ nav {
   }
 }
 
-.bio_video {
-  background-color: $notBlack;
+.warp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .bio_video {
-  display: inline-block;
-  justify-content: space-between;
-  width: 100%;
-
-  div {
-    padding: 10px 20px;
-  }
+  background-color: $notBlack;
+  display: grid;
+  grid-template-columns: 12fr 1fr 1fr 5fr;
+  grid-auto-rows: 7vw;
+  grid-template-areas: "description score other prizes";
 
   p {
     display: inline-block;
@@ -109,20 +109,34 @@ nav {
     @include font($main, $weightspan, $sizespan);
   }
 
-  .avaluation {
-    display: inline-block;
-    width: 20%;
-  }
-
   .score {
-    background-color: $third;
-    width: 50%;
     @include font($main, $weightspan, $sizespan);
   }
 
   .other {
-    width: 50%;
-    background-color: $secondary;
     @include font($main, $weightspan, $sizespan);
   }
+}
+
+.one {
+  grid-area: description;
+  @include center(row, space-between);
+  margin: 0 25px;
+}
+
+.two {
+  grid-area: score;
+  background-color: $third;
+  @include center();
+}
+
+.three {
+  grid-area: other;
+  background-color: $secondary;
+  @include center();
+}
+
+.four {
+  grid-area: prizes;
+  @include center();
 }
