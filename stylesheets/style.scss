@@ -174,3 +174,97 @@ nav {
     @include center(column, space-between);
   }
 }
+
+.gallery {
+  width: 100%;
+}
+
+.image_gallery {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(100vw / 5), max-content));
+  @include gallery();
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.split {
+  @include line_center();
+}
+.subtitle {
+  h2 {
+    @include center(row, center);
+    @include font($main, $weightsec, $sizesec);
+    margin-bottom: 1vh;
+  }
+  p {
+    @include center(row, center);
+    @include font($main, $weighttext, $sizep);
+    color: $text_alpha;
+  }
+}
+
+.full_cast {
+  border-bottom: solid 3px $primary;
+}
+
+.full_cast:hover {
+  border-bottom: solid 3px $secondary;
+  text-decoration: none;
+}
+
+.cast {
+  width: 100%;
+}
+
+.cast_info {
+  @include normal_section();
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, calc(100vw / 7)));
+  text-align: center;
+  div {
+    position: relative;
+    &.multiply {
+      position: relative;
+      margin-bottom: 1.5vh;
+      line-height: 0;
+      &:after {
+        content: "";
+        background: none;
+      }
+    }
+    &:hover {
+      h4 {
+        color: $secondary;
+      }
+      &.multiply:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba($secondary, 0.8);
+      }
+    }
+  }
+
+  img {
+    position: relative;
+    width: calc(100vw / 7);
+    background-color: $lettering;
+  }
+
+  h4 {
+    @include font($main, $weighth4, $sizeh4);
+    color: $text_alpha;
+  }
+
+  p {
+    @include font($main, $weightinfo, $sizeinfor);
+    color: $text_alpha;
+  }
+}
