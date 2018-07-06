@@ -37,9 +37,10 @@ span {
 }
 
 a {
-  @include transition();
+  // @include transition();
   cursor: pointer;
   text-decoration: none;
+  color: $lettering;
 
   &:hover { text-decoration: underline; }
 }
