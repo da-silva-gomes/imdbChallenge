@@ -208,10 +208,12 @@ nav {
 }
 
 .full_cast {
+  color: $text_alpha;
   border-bottom: solid 3px $primary;
 }
 
 .full_cast:hover {
+  color: $lettering;
   border-bottom: solid 3px $secondary;
   text-decoration: none;
 }
