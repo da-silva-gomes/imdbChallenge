@@ -270,3 +270,12 @@ nav {
     color: $text_alpha;
   }
 }
+
+.margin_details {
+  border: 1px solid red;
+  @include normal_section();
+  p {
+    border: 1px solid red;
+    @include font($main, $weightspan, $sizespan);
+  }
+}
