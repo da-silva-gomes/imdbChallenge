@@ -92,7 +92,7 @@ nav {
   background-color: $notBlack;
   display: grid;
   grid-template-columns: 12fr 1.5fr 1.5fr 5fr;
-  grid-auto-rows: 8vh;
+  grid-auto-rows: 70px;
   grid-template-areas: "description score other prizes";
 
   p {
@@ -228,7 +228,7 @@ nav {
   grid-template-columns: repeat(auto-fit, minmax(100px, calc(100vw / 7)));
   text-align: center;
   div {
-    position: relative;
+    // position: relative;
     &.multiply {
       position: relative;
       margin-bottom: 1.5vh;
@@ -249,7 +249,7 @@ nav {
         bottom: 0;
         right: 0;
         left: 0;
-        background: rgba($secondary, 0.8);
+        background: rgba($secondary, 0.7);
       }
     }
   }
@@ -272,10 +272,155 @@ nav {
 }
 
 .margin_details {
-  border: 1px solid red;
+  // border: 1px solid red;
   @include normal_section();
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "topic info";
+  .detail_topic {
+    grid-area: topic;
+    margin-right: 2vw;
+    p {
+      @include font($main, $weightspan, $sizespan);
+      text-align: right;
+    }
+  }
+  .detail_info {
+    grid-area: info;
+    margin-left: 2vw;
+    p {
+      @include font($main, $weightsec, $sizespan);
+      strong {
+        background-color: $secondary;
+        @include font($main, $weightspan, $sizespan);
+        padding: 0 5px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.long_text {
+  @include normal_section(14vw, 14vw);
   p {
-    border: 1px solid red;
-    @include font($main, $weightspan, $sizespan);
+    @include font($main, $weightsec, $sizep);
+  }
+  h4 {
+    @include font($main, $weightspan, $sizep);
+  }
+}
+
+.list_questions {
+  @include normal_section();
+}
+
+.shown_review {
+  @include normal_section(14vw, 14vw);
+  h4 {
+    @include font($main, $weighth4, $sizespan);
+  }
+  p {
+    @include font($main, $weightsec, $sizep);
+  }
+  strong {
+    background-color: $secondary;
+    @include font($main, $weightspan, $sizeh4);
+    padding: 0 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.review_info {
+  display: grid;
+  grid-template-columns: 1fr 14fr;
+  grid-auto-rows: 40px;
+  grid-template-areas: "value detail";
+  background-color: $notBlack;
+  margin: 2vh 0 4vh 0;
+  p {
+    @include font($main, $weightsec, $sizeh4);
+  }
+  .review_score {
+    @include user_center();
+    grid-area: value;
+    background-color: $secondary;
+  }
+  .review_detail {
+    @include user_center();
+    color: $text_alpha;
+    grid-area: detail;
+  }
+}
+
+.list_messages {
+  width: 60%;
+  @include user_center();
+  @include normal_section(14vw, 14vw);
+  p {
+    @include font($main, $weightsec, $sizep);
+  }
+}
+
+.recommended_grid {
+  overflow: hidden;
+  @include last_section();
+  line-height: 0;
+  display: grid;
+  overflow-x: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(100px, calc(100vw / 4)));
+  div {
+    p {
+      @include font($main, $weightp, $sizeinfor);
+      @include hover_rec(70%);
+      span {
+        @include font($main, $weightp, $sizesearch);
+      }
+    }
+    &.rec_multiply {
+      position: relative;
+      line-height: 0;
+      p, h5 {
+        position: absolute;
+        visibility: hidden;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+      }
+      &:after {
+        content: "";
+        background: none;
+        line-height: 0;
+      }
+    }
+
+    &:hover {
+      p, h5 {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+      }
+      &.rec_multiply:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba($secondary, 0.8);
+      }
+    }
+    img {
+      width: calc(100vw / 4);
+    }
   }
 }
