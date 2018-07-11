@@ -19,8 +19,16 @@ OTHERS SECTIONS
   margin: 100px 0;
 }
 
-@mixin normal_section() {
-  margin: 100px 0 120px 0;
+@mixin normal_section($x:0, $y:0) {
+  margin: 100px $x 120px $y;
+}
+
+@mixin last_section($x:0, $y:0) {
+  margin: 100px $x 0 $y;
+}
+
+@mixin hover_rec($top:20px) {
+  margin: $top 0 0 2vw;
 }
 
 /*

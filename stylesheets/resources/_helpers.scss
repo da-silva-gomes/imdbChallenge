@@ -42,3 +42,9 @@ HELPERS
 @mixin vertical() {
   align-items: center;
 }
+
+@mixin user_center($user:center) {
+  display: flex;
+  justify-content: $user;
+  align-items: center;
+}
